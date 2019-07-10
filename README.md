@@ -39,3 +39,41 @@ Usage:
 ```
 {{ '5500'|price }}
 ```
+
+
+# A) Widget: include
+
+```php
+// constoller
+return $this->render('email/list.html.twig', ['emails' => $emailRepo->getEmails($user->userId)]);
+```
+
+```php
+// email/list.html.twig
+
+// TODO: inlude JS, CSS assets
+
+<h1>List of emails</h1>
+{% include 'email/table.html.twig' with {'emails': emails} only %}
+```
+
+```php
+// email/table.html.twig
+
+<table>
+<thead>
+    <tr>
+        <td>Email</rd>
+        ...
+        ...
+    </tr>
+</thead>
+<tbody>
+    {% for email in emails %}
+        <tr>
+            <td>{{ email.address }}</td>
+            ...
+        </tr>
+    {% endfor %}
+<tbody>
+```
