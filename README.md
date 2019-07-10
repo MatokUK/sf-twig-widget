@@ -77,3 +77,26 @@ return $this->render('email/list.html.twig', ['emails' => $emailRepo->getEmails(
 </tbody>
 </table>
 ```
+
+
+# B) Widget: subrequest
+**EmailController.php**
+```php
+return $this->render('email/list.html.twig', ['user_id' => $user->userId]);
+```
+
+**email/list.html.twig**
+```php
+// TODO: inlude JS, CSS assets
+
+<h1>List of emails</h1>
+{{ render(controller('App\\Widget\\EmailList::showEntries', {userId: user_id})) }}
+```
+
+**EmailList.php**
+```php
+        public function showEntriesAction(Request $request, $userId)
+        {
+            return $this->render('widget/email_table.html.twig', ['emails' => $emailRepo->getEmails($userId)]);
+        }
+```
