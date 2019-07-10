@@ -43,23 +43,22 @@ Usage:
 
 # A) Widget: include
 
+**EmailController.php**
 ```php
-// constoller
 return $this->render('email/list.html.twig', ['emails' => $emailRepo->getEmails($user->userId)]);
 ```
 
+**email/list.html.twig**
 ```php
-// email/list.html.twig
-
 // TODO: inlude JS, CSS assets
 
 <h1>List of emails</h1>
 {% include 'email/table.html.twig' with {'emails': emails} only %}
 ```
 
-```php
-// email/table.html.twig
+**email/table.html.twig**
 
+```php
 <table>
 <thead>
     <tr>
