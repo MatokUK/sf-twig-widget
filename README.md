@@ -79,7 +79,7 @@ return $this->render('email/list.html.twig', ['emails' => $emailRepo->getEmails(
 ```
 
 
-# B) Widget: subrequest
+# B) Widget: Subrequests
 **EmailController.php**
 ```php
 return $this->render('email/list.html.twig', ['user_id' => $user->userId]);
@@ -104,3 +104,6 @@ return $this->render('email/list.html.twig', ['user_id' => $user->userId]);
 ![alt text](./subrequest2.PNG)
 
 ![alt text](./subrequest.PNG)
+
+
+# B) Widget: Subrequests & ESI
