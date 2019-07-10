@@ -62,7 +62,7 @@ return $this->render('email/list.html.twig', ['emails' => $emailRepo->getEmails(
 <table>
 <thead>
     <tr>
-        <td>Email</rd>
+        <td>Email</td>
         ...
         ...
     </tr>
@@ -74,5 +74,6 @@ return $this->render('email/list.html.twig', ['emails' => $emailRepo->getEmails(
             ...
         </tr>
     {% endfor %}
-<tbody>
+</tbody>
+</table>
 ```
